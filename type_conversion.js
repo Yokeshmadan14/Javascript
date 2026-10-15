@@ -73,7 +73,7 @@ console.log(Number(true) - "1");
 
 // Invalid API Price
 
-const price = "500abc";
+const pric = "500abc";
 console.log(Number(price) * 2);
 
 // Array Comparison
