@@ -34,3 +34,15 @@ const prepareorder = new Promise((resolve, reject) =>{
 prepareorder.then(message =>console.log(message))
 .catch(error => console.log(error));
 
+function oldGetData(callback) {
+  setTimeout(() => callback(null, 'Old Data'), 1000);
+}
+function getData() {
+  return new Promise((resolve, reject) => {
+    oldGetData((err, data) => {
+      if (err) reject(err);
+      else resolve(data);
+    });
+  });
+}
+getData().then(data => console.log(data));
