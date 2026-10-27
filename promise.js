@@ -34,6 +34,18 @@ const prepareorder = new Promise((resolve, reject) =>{
 prepareorder.then(message =>console.log(message))
 .catch(error => console.log(error));
 
+
+function validateCart()  { return Promise.resolve('Cart Valid'); }
+function processPayment(){ return Promise.resolve('Payment Done'); }
+function confirmShip()   { return Promise.resolve('Shipment Confirmed'); }
+validateCart()
+  .then(msg => { console.log(msg); return processPayment(); })
+  .then(msg => { console.log(msg); return confirmShip(); })
+  .then(msg => console.log(msg));
+
+
+  
+
 function oldGetData(callback) {
   setTimeout(() => callback(null, 'Old Data'), 1000);
 }
