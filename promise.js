@@ -43,8 +43,8 @@ validateCart()
   .then(msg => { console.log(msg); return confirmShip(); })
   .then(msg => console.log(msg));
 
-
   
+
 
 function oldGetData(callback) {
   setTimeout(() => callback(null, 'Old Data'), 1000);
@@ -58,3 +58,4 @@ function getData() {
   });
 }
 getData().then(data => console.log(data));
+
